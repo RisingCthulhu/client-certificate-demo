@@ -1,6 +1,7 @@
 [functions]
   external_node_modules = ["express"]
   node_bundler = "esbuild"
+  include_files = ["server_cert.pem","server_key.pem"]
 [[redirects]]
   force = true
   from = "/*"
