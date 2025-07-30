@@ -26,6 +26,7 @@
 const express = require('express');
 const fs = require('fs');
 const https = require('https');
+const path = require('node:path');
 
 // Setting up the private key and the certificate
 // ==============================================
@@ -62,8 +63,8 @@ const https = require('https');
 //
 // Let's add our server key and certificate to the `options object`, which we pass to the HTTPS server later:
 const opts = {
-	key: fs.readFileSync('server_key.pem'),
-	cert: fs.readFileSync('server_cert.pem'),
+	key: fs.readFileSync(path.resolve('server_key.pem')),
+	cert: fs.readFileSync(path.resolve('server_cert.pem')),
 	// Next, we instruct the HTTPS server to request a client certificate from the user
 	requestCert: true,
 	// Then we tell it to accept requests with no valid certificate. We need this to handle invalid connections as well
