@@ -1,8 +1,7 @@
 [functions]
   external_node_modules = ["express"]
   node_bundler = "esbuild"
-[functions.include_files]
-external_node_modules = ["server_cert.pem","server_key.pem"]
+  included_files = ["netlify/functions/server_cert.pem","netlify/functions/server_key.pem"]
 [[redirects]]
   force = true
   from = "/*"
